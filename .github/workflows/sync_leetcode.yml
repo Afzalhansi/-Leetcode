@@ -10,10 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Sync
-        uses: everpcpc/leetcode-sync@v1.7.0
+      - name: Sync LeetCode Solutions
+        uses: joshcai/leetcode-sync@v1.7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+          filter-duplicate-submissions: true
           verbose: true
