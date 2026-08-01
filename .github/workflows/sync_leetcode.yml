@@ -11,9 +11,9 @@ jobs:
 
     steps:
       - name: Sync
-        uses: sidecut/leetcode-sync@v1.8
+        uses: everpcpc/leetcode-sync@v1.7.0
         with:
-          github-token: ${{ github.token }}
-          leetcode-csrf-token: ${{ secrets.CSRFTOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           verbose: true
