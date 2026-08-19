@@ -1,29 +1,28 @@
 class Solution {
     public int countSubstrings(String s) {
+        int left;
+        int right;
         int count = 0;
-        for(int i = 0; i <= s.length() - 1; i++){
 
+        for(int i =0; i< s.length(); i++){
 
-            int left = i;
-            int right = i;
-
-            while(left >= 0 && right < s.length() && (s.charAt(left) == s.charAt(right))){
-
-                count++;
-                left--;
-                right++;
-            }
             left = i;
-            right = i+ 1;
-
-            while(left >= 0 && right < s.length() && (s.charAt(left) == s.charAt(right))){
-
+            right = i;
+            while(left >= 0 && right <s.length() && s.charAt(left) == s.charAt(right)){
                 count++;
-                left--;
                 right++;
+                left--;
+            }
+
+            left = i;
+            right = i + 1;
+            while(left >= 0 && right <s.length() && s.charAt(left) == s.charAt(right)){
+                count++;
+                right++;
+                left--;
             }
 
         }
-    return count;
+    return count;  
     }
 }
