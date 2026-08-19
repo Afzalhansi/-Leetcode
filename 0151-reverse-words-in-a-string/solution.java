@@ -2,7 +2,9 @@ class Solution {
     public String reverseWords(String s) {
 
         int right = s.length() - 1;
+
         StringBuilder sb = new StringBuilder();
+
 
         while(right >= 0){
 
@@ -15,7 +17,8 @@ class Solution {
             }
 
             int left = right;
-            while(left >=0 && s.charAt(left) != ' '){
+
+            while(left >= 0 && s.charAt(left) != ' '){
                 left--;
             }
 
@@ -23,10 +26,11 @@ class Solution {
                 sb.append(' ');
             }
 
-            sb.append(s.substring(left + 1, right + 1));
+            sb.append(s.substring(left +1, right + 1));
 
             right = left - 1;
         }
+
         return sb.toString();
     }
 }
