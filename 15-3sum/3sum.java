@@ -3,35 +3,36 @@ class Solution {
         
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
 
-        for(int i = 0; i < nums.length - 2; i++){
+        int sum = 0;
+        for(int i =0; i < nums.length - 2; i++){
+
             if(i > 0 && nums[i] == nums[i - 1]){
-                continue;
+                    continue;
             }
 
             int left = i + 1;
             int right = nums.length - 1;
 
             while(left < right){
-                int sum = nums[i] + nums[left] + nums[right];
+                sum = nums[i] + nums[left] + nums[right];
+
                 if(sum == 0){
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     left++;
                     right--;
-                    // Skip duplicates for left
-                    while(left < right && nums[left] == nums[left - 1]) {
+
+                    while(left < right && nums[left] == nums[left - 1]){
                         left++;
                     }
 
-                    // Skip duplicates for right
-                    while(left < right && nums[right] == nums[right + 1]) {
+                    while(left < right && nums[right] == nums[right + 1]){
                         right--;
                     }
-                }else if(sum < 0){
-                    left++;
-                }else{
+                }else if(sum > 0){
                     right--;
+                }else{
+                    left++;
                 }
             }
         }
