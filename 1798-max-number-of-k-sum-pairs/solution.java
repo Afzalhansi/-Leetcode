@@ -7,18 +7,19 @@ class Solution {
 
         int left = 0;
         int right = nums.length - 1;
+        int sum =0;
 
         while(left < right){
-            int sum = nums[left] + nums[right];
 
+            sum = nums[left] + nums[right];
             if(sum == k){
                 count++;
-                right--;
                 left++;
-            } else if(sum < k){
-                left++;
-            } else if(sum > k){
                 right--;
+            }else if(sum > k){
+                right--;
+            }else{
+                left++;
             }
         }
         return count;
