@@ -3,21 +3,24 @@ class Solution {
         int left = 0;
         int count = 0;
         int currsum = 0;
+        int right = 0;
 
-        for(int right = 0; right < arr.length; right++){
+        while(right < k){
+                currsum += arr[right];
+                right++;
+            }
+            if(currsum >= k * threshold){
+               count++;
+            }
 
-            currsum += arr[right];
-
-            if(right - left + 1 == k){
-
-                if(currsum >= threshold * k){
-                    count++;
-                }
-                currsum -= arr[left];
-                left++;
+        while(right < arr.length){
+            currsum = currsum - arr[left] + arr[right];
+            left++;
+            right++;
+            if(currsum >= k * threshold){
+               count++;
             }
         }
         return count;
-        
     }
 }
