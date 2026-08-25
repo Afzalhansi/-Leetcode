@@ -6,11 +6,14 @@ class Solution {
         int maxlength = 0;
 
 
+        
         for(int right = 0; right < nums.length; right++){
+
 
             if(nums[right] == 0){
                 zerocount++;
             }
+
 
             while(zerocount > k){
                 if(nums[left] == 0){
@@ -18,9 +21,8 @@ class Solution {
                 }
                 left++;
             }
-             maxlength = Math.max(maxlength, right - left + 1);
+            maxlength = Math.max(maxlength, right - left + 1);
         }
-
         return maxlength;
     }
 }
