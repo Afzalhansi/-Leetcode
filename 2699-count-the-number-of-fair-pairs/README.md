@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/count-the-number-of-fair-pairs">Count the Number of Fair Pairs</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given a <strong>0-indexed</strong> integer array <code>nums</code> of size <code>n</code> and two integers <code>lower</code> and <code>upper</code>, return <em>the number of fair pairs</em>.</p>
+<p>Given a <strong>0-indexed</strong> integer array <code>nums</code> of size <code>n</code> and two integers <code>lower</code> and <code>upper</code>, return <em>the number of fair pairs</em>.</p>
 
 <p>A pair <code>(i, j)</code> is <b>fair </b>if:</p>
 
