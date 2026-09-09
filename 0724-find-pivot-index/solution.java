@@ -4,21 +4,20 @@ class Solution {
         int leftsum = 0;
         int rightsum = 0;
 
-        for(int i = 0; i < nums.length; i++){
-            int curr = nums[i];
-            totalsum = totalsum + curr;
+        for(int i =0; i < nums.length; i++){
+            totalsum += nums[i];
         }
 
-        for(int i = 0; i < nums.length; i++){
-            int curr = nums[i];
-            rightsum =totalsum - leftsum - curr;
+        for(int i =0; i < nums.length; i++){
 
+            rightsum = totalsum - leftsum - nums[i];
+            
             if(leftsum == rightsum){
                 return i;
             }
-            leftsum = leftsum + curr;
+            leftsum += nums[i];
         }
 
-        return -1;
+        return  -1;
     }
 }
