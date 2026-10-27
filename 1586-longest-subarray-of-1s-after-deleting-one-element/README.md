@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element">Longest Subarray of 1's After Deleting One Element</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given a binary array <code>nums</code>, you should delete <strong>one</strong> element from it.</p>
+<p>You are given a binary array <code>nums</code>, you should delete <strong>one</strong> element from it.</p>
 
 <p>Return the size of the <strong>longest non-empty subarray</strong> containing only 1&#39;s in the resulting array. Return 0 if there is no such <strong>subarray</strong>.</p>
 
