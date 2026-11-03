@@ -1,48 +1,33 @@
 class Solution {
     public int maxVowels(String s, int k) {
-
         int left = 0;
         int right = 0;
-        int currvowels = 0;
-        int maxvowels = 0;
-
-        while(right < k){
-
-            if(s.charAt(right) =='a'||
-            s.charAt(right) =='e'||
-            s.charAt(right) =='i'||
-            s.charAt(right) =='o'||
-            s.charAt(right) =='u'
-            ){
-                currvowels++;
+        int max = 0;
+        int current = 0;
+        while (right < k) {
+            char ch = s.charAt(right);
+            if (ch == 'a' || ch == 'e' || ch == 'i' ||
+                ch == 'o' || ch == 'u') {
+                current++;
             }
             right++;
         }
-        maxvowels = Math.max(maxvowels, currvowels);
-
-
+        max = current;
         while(right < s.length()){
-            if(s.charAt(left) =='a'||
-            s.charAt(left) =='e'||
-            s.charAt(left) =='i'||
-            s.charAt(left) =='o'||
-            s.charAt(left) =='u'){
-                currvowels--;
+            char outgoing = s.charAt(left);
+            if (outgoing == 'a' || outgoing == 'e' || outgoing == 'i' ||
+                outgoing == 'o' || outgoing == 'u') {
+                current--;
             }
-
-            if(s.charAt(right) =='a'||
-            s.charAt(right) =='e'||
-            s.charAt(right) =='i'||
-            s.charAt(right) =='o'||
-            s.charAt(right) =='u'
-            ){
-                currvowels++;
+            char incoming = s.charAt(right);
+            if (incoming == 'a' || incoming == 'e' || incoming == 'i' ||
+                incoming == 'o' || incoming == 'u') {
+                current++;
             }
+            max = Math.max(max, current);
             left++;
             right++;
-
-            maxvowels = Math.max(maxvowels, currvowels);
         }
-        return maxvowels;
+        return max;
     }
 }
